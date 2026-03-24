@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arun Prasanth — HR Leader & People Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #faf9f6;
+  --bg2: #f4f2ed;
+  --bg3: #eeeae3;
+  --bg4: #e8e4db;
+  --surface: #ffffff;
+  --border: rgba(0,0,0,0.07);
+  --border2: rgba(0,0,0,0.13);
+  --text: #1a1916;
+  --text2: #5a5750;
+  --text3: #9a9690;
+  --gold: #b07d2a;
+  --gold2: #c99040;
+  --gold-dim: rgba(176,125,42,0.10);
+  --teal: #0e6b54;
+  --teal-dim: rgba(14,107,84,0.09);
+  --blue: #1a5f82;
+  --blue-dim: rgba(26,95,130,0.09);
+  --red: #b84520;
+  --red-dim: rgba(184,69,32,0.09);
+  --shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 20px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.09);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 2px; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 60px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(250,249,246,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--text); }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; }
+.nav-links a { font-size: 12px; font-weight: 500; color: var(--text2); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { background: var(--text); color: #fff; padding: 9px 24px; border-radius: 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+.nav-cta:hover { background: var(--gold); transform: translateY(-1px); }
+
+/* HERO */
+.hero { min-height: 100vh; position: relative; display: flex; align-items: center; padding: 120px 60px 80px; overflow: hidden; }
+.hero-bg-lines { position: absolute; inset: 0; z-index: 0; pointer-events: none; background-image: linear-gradient(rgba(176,125,42,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(176,125,42,0.045) 1px, transparent 1px); background-size: 80px 80px; }
+.hero-glow { position: absolute; top: -160px; right: -80px; width: 640px; height: 640px; background: radial-gradient(ellipse, rgba(176,125,42,0.07) 0%, transparent 65%); pointer-events: none; z-index: 0; }
+.hero-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center; }
+.hero-tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(176,125,42,0.3); border-radius: 2px; padding: 6px 14px; margin-bottom: 28px; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+.hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
+.hero-name { font-family: 'Cormorant Garamond', serif; font-size: 76px; font-weight: 300; line-height: 0.95; letter-spacing: -2px; margin-bottom: 8px; }
+.hero-name strong { font-weight: 700; display: block; }
+.hero-name em { font-style: italic; color: var(--gold); display: block; }
+.hero-role { font-size: 13px; font-weight: 400; color: var(--text2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 32px; margin-top: 16px; }
+.hero-desc { font-size: 16px; color: var(--text2); line-height: 1.8; font-weight: 300; max-width: 520px; margin-bottom: 40px; }
+.hero-desc strong { color: var(--text); font-weight: 500; }
+.hero-actions { display: flex; gap: 14px; margin-bottom: 48px; }
+.btn-dark { background: var(--text); color: #fff; padding: 14px 32px; border-radius: 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+.btn-dark:hover { background: var(--gold); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--text); padding: 14px 32px; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; transition: all 0.2s; border: 1px solid var(--border2); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.hero-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+.badge { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border); padding: 7px 14px; border-radius: 3px; font-size: 12px; color: var(--text2); box-shadow: var(--shadow); }
+.badge-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+
+/* HERO RIGHT */
+.hero-right { display: flex; flex-direction: column; gap: 16px; }
+.photo-wrap { position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--border2); box-shadow: var(--shadow-md); }
+.photo-frame { width: 100%; aspect-ratio: 4/5; background: var(--bg2); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; overflow: hidden; }
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-placeholder { width: 80px; height: 80px; border-radius: 50%; background: var(--bg3); border: 2px dashed var(--border2); display: flex; align-items: center; justify-content: center; font-size: 32px; }
+.photo-placeholder-text { font-size: 12px; color: var(--text3); }
+.photo-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(26,25,22,0.88)); padding: 40px 22px 20px; }
+.photo-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+.photo-title { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; }
+.photo-corner { position: absolute; top: 14px; right: 14px; background: var(--gold); color: #fff; padding: 4px 10px; border-radius: 2px; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+.hero-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.hstat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 12px; text-align: center; box-shadow: var(--shadow); transition: border-color 0.2s, transform 0.2s; }
+.hstat:hover { border-color: var(--gold); transform: translateY(-2px); }
+.hstat-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--gold); line-height: 1; }
+.hstat-label { font-size: 10px; color: var(--text3); letter-spacing: 0.8px; text-transform: uppercase; margin-top: 4px; line-height: 1.4; }
+
+/* SECTIONS */
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+.section { padding: 100px 0; }
+.section-label { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+.section-label::after { content: ''; height: 1px; background: var(--border); width: 60px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 50px; font-weight: 300; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 16px; }
+.section-title strong { font-weight: 700; }
+.section-title em { font-style: italic; color: var(--gold); }
+.section-sub { font-size: 16px; color: var(--text2); max-width: 540px; line-height: 1.8; font-weight: 300; margin-bottom: 56px; }
+.divider { height: 1px; background: var(--border); max-width: 1200px; margin: 0 auto; }
+
+/* PROBLEMS */
+.problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+.problem-card { background: var(--surface); padding: 38px 32px; transition: background 0.25s; position: relative; }
+.problem-card:hover { background: var(--bg); }
+.problem-card::after { content: ''; position: absolute; bottom: 0; left: 32px; right: 32px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.problem-card:hover::after { transform: scaleX(1); }
+.pcard-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; line-height: 1; color: var(--bg4); margin-bottom: 18px; user-select: none; }
+.pcard-type { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.pcard-type.ops { color: var(--teal); }
+.pcard-type.finance { color: var(--gold); }
+.pcard-type.people { color: var(--blue); }
+.pcard-type.culture { color: var(--red); }
+.pcard-before { font-size: 10px; color: var(--text3); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 7px; }
+.pcard-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; line-height: 1.25; color: var(--text); margin-bottom: 12px; }
+.pcard-body { font-size: 13px; color: var(--text2); line-height: 1.75; font-weight: 300; margin-bottom: 20px; }
+.pcard-result { border-top: 1px solid var(--border); padding-top: 16px; font-size: 13px; color: var(--text); line-height: 1.6; display: flex; gap: 10px; align-items: flex-start; }
+.pcard-arrow { color: var(--gold); font-size: 14px; flex-shrink: 0; margin-top: 3px; }
+
+/* CASES */
+.cases-list { display: flex; flex-direction: column; gap: 2px; }
+.case-card { background: var(--surface); position: relative; overflow: hidden; cursor: pointer; box-shadow: var(--shadow); }
+.case-card:first-child { border-radius: 14px 14px 0 0; }
+.case-card:last-child { border-radius: 0 0 14px 14px; }
+.case-card-header { padding: 34px 44px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; transition: background 0.2s; border-left: 3px solid transparent; }
+.case-card:hover .case-card-header { background: var(--bg); }
+.case-card.open .case-card-header { border-left-color: var(--gold); background: var(--bg); }
+.case-card.teal-case.open .case-card-header { border-left-color: var(--teal); }
+.case-card.blue-case.open .case-card-header { border-left-color: var(--blue); }
+.case-card.red-case.open .case-card-header { border-left-color: var(--red); }
+.case-card-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+.case-card.open .case-card-body { max-height: 900px; border-top: 1px solid var(--border); }
+.case-body-inner { padding: 34px 44px; }
+.case-tag { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.case-tag.ops { color: var(--gold); }
+.case-tag.finance { color: var(--teal); }
+.case-tag.people { color: var(--blue); }
+.case-tag.culture { color: var(--red); }
+.case-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; line-height: 1.2; color: var(--text); max-width: 620px; }
+.case-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border2); background: transparent; display: flex; align-items: center; justify-content: center; color: var(--text2); font-size: 20px; cursor: pointer; transition: all 0.3s; flex-shrink: 0; font-family: 'Outfit', sans-serif; line-height: 1; }
+.case-card.open .case-toggle { background: var(--gold); border-color: var(--gold); color: #fff; transform: rotate(45deg); }
+.case-card.teal-case.open .case-toggle { background: var(--teal); border-color: var(--teal); }
+.case-card.blue-case.open .case-toggle { background: var(--blue); border-color: var(--blue); }
+.case-card.red-case.open .case-toggle { background: var(--red); border-color: var(--red); }
+.case-sit { margin-bottom: 22px; }
+.case-sit h4 { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text3); margin-bottom: 8px; }
+.case-sit p { font-size: 15px; color: var(--text2); line-height: 1.8; font-weight: 300; }
+.case-sit p strong { color: var(--text); font-weight: 500; }
+.impact-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 26px; }
+.impact-box { background: var(--bg2); border-radius: 8px; padding: 20px 18px; border-left: 2px solid var(--gold); }
+.impact-box.teal { border-left-color: var(--teal); }
+.impact-box.blue { border-left-color: var(--blue); }
+.impact-box.red { border-left-color: var(--red); }
+.impact-num { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 4px; }
+.impact-label { font-size: 12px; color: var(--text2); line-height: 1.5; }
+
+/* SPEAKER */
+.speaker-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 100px 0; }
+.speaker-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.speaker-stage { background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 44px 36px; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow-md); }
+.speaker-stage::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.speaker-mic { font-size: 44px; margin-bottom: 14px; }
+.speaker-quote { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-style: italic; color: var(--text2); line-height: 1.55; margin-bottom: 28px; }
+.speaker-event-card { background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 18px 20px; display: flex; align-items: center; gap: 14px; text-align: left; text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
+.speaker-event-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.event-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--gold-dim); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.event-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+.event-meta { font-size: 12px; color: var(--text3); }
+.event-arrow { margin-left: auto; color: var(--gold); font-size: 14px; }
+.speaker-topics { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.topic-row { display: flex; align-items: center; gap: 14px; padding: 16px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow); transition: border-color 0.2s, transform 0.2s; }
+.topic-row:hover { border-color: var(--gold); transform: translateX(4px); }
+.topic-icon { font-size: 18px; flex-shrink: 0; }
+.topic-name { font-size: 14px; color: var(--text); font-weight: 500; }
+.topic-sub { font-size: 12px; color: var(--text3); margin-top: 2px; }
+
+/* SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+.skill-card { background: var(--surface); padding: 30px 28px; transition: background 0.2s; }
+.skill-card:hover { background: var(--bg); }
+.skill-icon { font-size: 22px; margin-bottom: 14px; display: block; }
+.skill-name { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 12px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.stag { background: var(--bg2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 2px; font-size: 11px; color: var(--text2); }
+
+/* VALUE */
+.value-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.value-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 34px 30px; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; box-shadow: var(--shadow); }
+.value-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.value-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.3s; }
+.value-card:hover::before { opacity: 1; }
+.value-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 700; color: var(--bg4); line-height: 1; margin-bottom: 14px; user-select: none; }
+.value-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
+.value-body { font-size: 14px; color: var(--text2); line-height: 1.75; font-weight: 300; }
+
+/* CONTACT */
+.contact-section { padding: 110px 0; text-align: center; background: var(--bg2); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+.contact-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 700px; height: 350px; background: radial-gradient(ellipse, rgba(176,125,42,0.07), transparent 70%); pointer-events: none; }
+.contact-section .section-title { font-size: 52px; margin-bottom: 18px; }
+.contact-section .section-sub { margin: 0 auto 48px; text-align: center; max-width: 480px; }
+.contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.contact-btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 36px; border-radius: 6px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.2s; font-family: 'Outfit', sans-serif; }
+.contact-btn.primary { background: var(--text); color: #fff; border: 1.5px solid var(--text); }
+.contact-btn.primary:hover { background: var(--gold); border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.contact-btn.secondary { background: var(--surface); color: var(--text); border: 1.5px solid var(--border2); box-shadow: var(--shadow); }
+.contact-btn.secondary:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 26px 60px; display: flex; justify-content: space-between; align-items: center; background: var(--surface); }
+footer p { font-size: 12px; color: var(--text3); }
+footer a { color: var(--gold); text-decoration: none; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero, .wrap, .speaker-inner { padding-left: 24px; padding-right: 24px; }
+  .hero-inner, .speaker-inner { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-name { font-size: 52px; }
+  .problems-grid, .skills-grid { grid-template-columns: 1fr; }
+  .case-card-header { padding: 24px; }
+  .case-body-inner { padding: 24px; }
+  .impact-strip { grid-template-columns: 1fr; }
+  .value-grid { grid-template-columns: 1fr; }
+  .section-title, .contact-section .section-title { font-size: 36px; }
+  footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Arun <span>Prasanth</span></div>
+  <div class="nav-links">
+    <a href="#problems">Problems</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#skills">Expertise</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="mailto:sundaramarunprasanth48@gmail.com" class="nav-cta">Let's Talk</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Available for APAC & Global Roles</div>
+      <h1 class="hero-name">
+        <strong>Arun</strong>
+        Prasanth
+        <em>HR Leader.</em>
+      </h1>
+      <p class="hero-role">Head of HR · Director of HR · HR Business Partner</p>
+      <p class="hero-desc">I don't run HR — I <strong>solve the business problems</strong> that bad HR creates. Margin leaks, payroll fires, compliance exposure, idle cost, broken culture. 8+ years across Tech & Consulting in APAC, building people strategy that moves the P&L.</p>
+      <div class="hero-actions">
+        <a href="#cases" class="btn-dark">See My Work</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-badges">
+        <div class="badge"><span class="badge-dot" style="background:var(--gold)"></span> APAC Region</div>
+        <div class="badge"><span class="badge-dot" style="background:var(--teal)"></span> Tech & Consulting</div>
+        <div class="badge"><span class="badge-dot" style="background:var(--blue)"></span> Speaker & Practitioner</div>
+      </div>
+    </div>
+    <div class="hero-right reveal">
+      <div class="photo-wrap">
+        <div class="photo-frame">
+          <!-- TO ADD YOUR PHOTO: replace the two lines below with:
+               <img src="your-photo.jpg" alt="Arun Prasanth"> -->
+          <div class="photo-placeholder">👤</div>
+          <div class="photo-placeholder-text">Add your photo here</div>
+        </div>
+        <div class="photo-overlay">
+          <div class="photo-name">Arun Prasanth</div>
+          <div class="photo-title">HR Leader · APAC</div>
+        </div>
+        <div class="photo-corner">Open to Work</div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hstat"><div class="hstat-num">8+</div><div class="hstat-label">Years APAC HR</div></div>
+        <div class="hstat"><div class="hstat-num">8+</div><div class="hstat-label">Countries Compliance</div></div>
+        <div class="hstat"><div class="hstat-num">3–4%</div><div class="hstat-label">Floater Cost Target</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROBLEMS — order: 4, 2, 3, 6, 1, 5 -->
+<section class="section" id="problems">
+  <div class="wrap">
+    <div class="section-label reveal">Where I Create Value</div>
+    <h2 class="section-title reveal">The business problems<br><strong>I was hired</strong> <em>to fix.</em></h2>
+    <p class="section-sub reveal">Every role I've taken had a broken system underneath it. Here's what those problems actually cost — and what I did about them.</p>
+    <div class="problems-grid">
+
+      <!-- 4 -->
+      <div class="problem-card reveal">
+        <div class="pcard-num">01</div>
+        <div class="pcard-type culture">Culture & Performance</div>
+        <div class="pcard-before">Before I arrived</div>
+        <div class="pcard-title">No performance system. No culture. High attrition, zero accountability.</div>
+        <div class="pcard-body">Feedback was ad hoc, top performers had no growth path, and underperformance went unaddressed. Culture was shaped by whoever was loudest — not by design.</div>
+        <div class="pcard-result"><span class="pcard-arrow">→</span>Built a robust performance management system and culture framework that reduced attrition and gave managers real tools.</div>
+      </div>
+
+      <!-- 2 -->
+      <div class="problem-card reveal d1">
+        <div class="pcard-num">02</div>
+        <div class="pcard-type finance">Finance & Margin</div>
+        <div class="pcard-before">Before I arrived</div>
+        <div class="pcard-title">Idle resources were silently burning margin every quarter.</div>
+        <div class="pcard-body">No allocation structure, no billing framework, no visibility. Consultants sat between projects fully salaried, unbilled. Leadership found out in the P&L — too late to act.</div>
+        <div class="pcard-result"><span class="pcard-arrow">→</span>Built a floater cost framework that held bench cost at 3–4% of MoM revenue — consistently, every month.</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="problem-card reveal d2">
+        <div class="pcard-num">03</div>
+        <div class="pcard-type people">People & Scale</div>
+        <div class="pcard-before">Before I arrived</div>
+        <div class="pcard-title">Three countries. Zero HR infrastructure. Pure legal and cultural risk.</div>
+        <div class="pcard-body">Expanding across APAC with no policies, no contract framework, no compliance coverage. A single labour dispute could have been catastrophic at the scale they were growing.</div>
+        <div class="pcard-result"><span class="pcard-arrow">→</span>Built HR from scratch across 3 countries, managing compliance in 8+ simultaneously — zero violations.</div>
+      </div>
+
+      <!-- 6 -->
+      <div class="problem-card reveal">
+        <div class="pcard-num">04</div>
+        <div class="pcard-type finance">Compliance & Risk</div>
+        <div class="pcard-before">Before I arrived</div>
+        <div class="pcard-title">8+ country compliance managed ad hoc — growing legal exposure.</div>
+        <div class="pcard-body">Each market had different labour laws, reporting requirements and contract standards. Managing it ad hoc meant constant gaps and growing exposure as the company scaled.</div>
+        <div class="pcard-result"><span class="pcard-arrow">→</span>Built a centralised APAC compliance tracker — self-serve for local teams, zero violations on my watch.</div>
+      </div>
+
+      <!-- 1 -->
+      <div class="problem-card reveal d1">
+        <div class="pcard-num">05</div>
+        <div class="pcard-type ops">Operations & Tech</div>
+        <div class="pcard-before">Before I arrived</div>
+        <div class="pcard-title">Payroll was running 2–3 times a month. Every month.</div>
+        <div class="pcard-body">Manual processing meant constant errors — wrong deductions, attendance mismatches, compliance misses. Each rerun cost finance hours, damaged employee trust, and created audit exposure.</div>
+        <div class="pcard-result"><span class="pcard-arrow">→</span>Implemented HRIS that eliminated reruns, automated performance cycles, and cut admin time by 60%+.</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="problem-card reveal d2">
+        <div class="pcard-num">06</div>
+        <div class="pcard-type ops">HR as a Business Partner</div>
+        <div class="pcard-before">Before I arrived</div>
+        <div class="pcard-title">HR was seen as admin — not a seat at the leadership table.</div>
+        <div class="pcard-body">Headcount, budgeting, and org design decisions were made without HR input. People costs were surprises. Workforce planning was reactive, not strategic.</div>
+        <div class="pcard-result"><span class="pcard-arrow">→</span>Repositioned HR as a business function — advising on headcount ROI, org design, and workforce cost with financial precision.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CASE STUDIES -->
+<section class="section" id="cases">
+  <div class="wrap">
+    <div class="section-label reveal">Deep Dives</div>
+    <h2 class="section-title reveal">Four initiatives.<br><strong>Real outcomes.</strong> <em>No fluff.</em></h2>
+    <p class="section-sub reveal">Click each case to see the full situation, what I did, and what changed.</p>
+    <div class="cases-list">
+
+      <div class="case-card reveal" onclick="toggleCase(this)">
+        <div class="case-card-header">
+          <div>
+            <div class="case-tag ops">HRIS & Payroll Transformation</div>
+            <div class="case-title">Turned a recurring payroll fire into a zero-touch automated system — and rebuilt performance management alongside it</div>
+          </div>
+          <button class="case-toggle">+</button>
+        </div>
+        <div class="case-card-body">
+          <div class="case-body-inner">
+            <div class="case-sit"><h4>The Situation</h4><p>The company was running payroll <strong>multiple times per month</strong> due to persistent manual errors — wrong deductions, missed overtime, attendance mismatches. Finance was spending hours on reruns. Every payroll cycle was a crisis, not an operation.</p></div>
+            <div class="case-sit"><h4>What I Did</h4><p>I led the full HRIS implementation end-to-end — vendor evaluation, data migration, workflow configuration and team training. I mapped every failure point in the old process and eliminated them: automated attendance syncing, rule-based payroll calculation, and a mandatory pre-run audit check. I simultaneously used the platform to <strong>automate the full performance management cycle</strong> — replacing the spreadsheets managers had been struggling with.</p></div>
+            <div class="impact-strip">
+              <div class="impact-box"><div class="impact-num">~Zero</div><div class="impact-label">Payroll reruns post-implementation</div></div>
+              <div class="impact-box"><div class="impact-num">60%+</div><div class="impact-label">Reduction in HR admin hours per cycle</div></div>
+              <div class="impact-box"><div class="impact-num">1</div><div class="impact-label">Unified system: payroll + performance + attendance</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card teal-case reveal" onclick="toggleCase(this)">
+        <div class="case-card-header">
+          <div>
+            <div class="case-tag finance">Resource Cost & Margin Control</div>
+            <div class="case-title">Turned idle headcount from a quarterly surprise into a managed metric — held at 3–4% of MoM revenue</div>
+          </div>
+          <button class="case-toggle">+</button>
+        </div>
+        <div class="case-card-body">
+          <div class="case-body-inner">
+            <div class="case-sit"><h4>The Situation</h4><p>In a consulting and tech firm, <strong>bench cost is a direct margin leak</strong>. No structure around allocation — no billing tracking, no idle time ceiling, no accountability. Resources sat between projects fully salaried, unbilled. Leadership only saw it in the P&L after the damage was done.</p></div>
+            <div class="case-sit"><h4>What I Did</h4><p>I designed a floater cost framework from scratch — defining bench time, setting a target band (3–4% of MoM revenue), and building a weekly visibility report for leadership. I worked with project leads on faster reallocation, shadow staffing, and internal upskilling. Bench cost became a <strong>managed line item, not a surprise</strong>.</p></div>
+            <div class="impact-strip">
+              <div class="impact-box teal"><div class="impact-num">3–4%</div><div class="impact-label">Floater cost held within target every month</div></div>
+              <div class="impact-box teal"><div class="impact-num">Weekly</div><div class="impact-label">Leadership visibility into bench cost — from zero</div></div>
+              <div class="impact-box teal"><div class="impact-num">↓</div><div class="impact-label">Unplanned margin erosion from idle resources</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card blue-case reveal" onclick="toggleCase(this)">
+        <div class="case-card-header">
+          <div>
+            <div class="case-tag people">APAC HR Build-Out</div>
+            <div class="case-title">Built a full HR function from zero across 3 countries — policies, compliance, onboarding and performance in one cycle</div>
+          </div>
+          <button class="case-toggle">+</button>
+        </div>
+        <div class="case-card-body">
+          <div class="case-body-inner">
+            <div class="case-sit"><h4>The Situation</h4><p>The company was operating across multiple APAC markets <strong>with no formal HR infrastructure</strong>. Contracts were inconsistent, no local policy frameworks, no onboarding, no performance cycle, and growing compliance exposure across three labour jurisdictions — while headcount was scaling fast.</p></div>
+            <div class="case-sit"><h4>What I Did</h4><p>I built the HR function across all three countries simultaneously — drafting country-specific employment contracts, employee handbooks, and onboarding frameworks. Designed the first formal performance review cycle and mapped compliance obligations under each jurisdiction. Extended coverage to 5 additional APAC markets without adding headcount via a <strong>centralised compliance tracker</strong> teams could self-serve.</p></div>
+            <div class="impact-strip">
+              <div class="impact-box blue"><div class="impact-num">3</div><div class="impact-label">HR departments built from scratch, simultaneously</div></div>
+              <div class="impact-box blue"><div class="impact-num">8+</div><div class="impact-label">Countries under active compliance coverage</div></div>
+              <div class="impact-box blue"><div class="impact-num">Zero</div><div class="impact-label">Labour compliance violations during tenure</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card red-case reveal" onclick="toggleCase(this)">
+        <div class="case-card-header">
+          <div>
+            <div class="case-tag culture">Culture & Performance Design</div>
+            <div class="case-title">Designed a performance system and culture framework that reduced attrition and gave managers real accountability tools</div>
+          </div>
+          <button class="case-toggle">+</button>
+        </div>
+        <div class="case-card-body">
+          <div class="case-body-inner">
+            <div class="case-sit"><h4>The Situation</h4><p>There was <strong>no structured performance process</strong>. Feedback was ad hoc, top performers had no growth path, underperformance went unaddressed. Culture was unintentional — and attrition was the result.</p></div>
+            <div class="case-sit"><h4>What I Did</h4><p>Built a performance management system integrated into the HRIS — structured review cycles, goal-setting frameworks, and manager calibration sessions. Alongside this, I designed a culture framework: defining values, embedding them into onboarding and recognition, and tracking progress via engagement surveys. HR shifted from reactive to proactive — <strong>people problems identified before they became attrition.</strong></p></div>
+            <div class="impact-strip">
+              <div class="impact-box red"><div class="impact-num">↓</div><div class="impact-label">Attrition tracked and addressed through early signals</div></div>
+              <div class="impact-box red"><div class="impact-num">↑</div><div class="impact-label">Manager confidence in performance conversations</div></div>
+              <div class="impact-box red"><div class="impact-num">1st</div><div class="impact-label">Formal culture and values framework for the org</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SPEAKER -->
+<div class="speaker-section" id="speaking">
+  <div class="speaker-inner">
+    <div class="reveal">
+      <div class="speaker-stage">
+        <div class="speaker-mic">🎙️</div>
+        <div class="speaker-quote">"The future of HR isn't about managing people — it's about designing the systems that let people do their best work."</div>
+        <a href="https://virtual.peoplealliance.com/location/peopleops" target="_blank" class="speaker-event-card">
+          <div class="event-icon">🌐</div>
+          <div>
+            <div class="event-name">People Operations Summit 2026</div>
+            <div class="event-meta">PeopleAlliance · Virtual Global Event</div>
+          </div>
+          <div class="event-arrow">↗</div>
+        </a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="section-label">On Stage</div>
+      <h2 class="section-title">Speaking on<br><strong>the future</strong><br><em>of HR.</em></h2>
+      <p class="section-sub" style="margin-bottom:28px;">I speak at industry events on the intersection of human strategy and automation — helping HR leaders understand what to automate, what to protect, and how to lead through both.</p>
+      <div class="speaker-topics">
+        <div class="topic-row"><div class="topic-icon">🤖</div><div><div class="topic-name">HR & AI / Automation</div><div class="topic-sub">What automation changes in people ops — and what it never will</div></div></div>
+        <div class="topic-row"><div class="topic-icon">🧭</div><div><div class="topic-name">People Strategy as Business Strategy</div><div class="topic-sub">How HR decisions directly move revenue, margin and retention</div></div></div>
+        <div class="topic-row"><div class="topic-icon">⚙️</div><div><div class="topic-name">HR Tech & Systems</div><div class="topic-sub">Picking and implementing the right tools for your stage of growth</div></div></div>
+        <div class="topic-row"><div class="topic-icon">🌏</div><div><div class="topic-name">Future of Work in APAC</div><div class="topic-sub">Multi-market hiring, compliance and culture post-pandemic</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-label reveal">Expertise</div>
+    <h2 class="section-title reveal">What I bring<br><em>to the table.</em></h2>
+    <p class="section-sub reveal">The tools I use aren't HR tools — they're business tools that happen to live in the people function.</p>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><span class="skill-icon">⚙️</span><div class="skill-name">HR Systems & Automation</div><div class="skill-tags"><span class="stag">HRIS Implementation</span><span class="stag">Payroll Automation</span><span class="stag">Workflow Design</span><span class="stag">Data Migration</span><span class="stag">Process Mapping</span></div></div>
+      <div class="skill-card reveal d1"><span class="skill-icon">🤝</span><div class="skill-name">People & Culture</div><div class="skill-tags"><span class="stag">Culture Design</span><span class="stag">Onboarding Architecture</span><span class="stag">Employee Lifecycle</span><span class="stag">Engagement Strategy</span><span class="stag">Retention Frameworks</span></div></div>
+      <div class="skill-card reveal d2"><span class="skill-icon">📊</span><div class="skill-name">HR Finance & Cost Control</div><div class="skill-tags"><span class="stag">Headcount Planning</span><span class="stag">Resource Allocation</span><span class="stag">Bench Cost Management</span><span class="stag">Workforce Budgeting</span><span class="stag">Cost-per-Hire</span></div></div>
+      <div class="skill-card reveal"><span class="skill-icon">🧩</span><div class="skill-name">Business Partnering</div><div class="skill-tags"><span class="stag">C-Suite Advisory</span><span class="stag">Org Design</span><span class="stag">Workforce Planning</span><span class="stag">Change Management</span><span class="stag">Stakeholder Alignment</span></div></div>
+      <div class="skill-card reveal d1"><span class="skill-icon">⚖️</span><div class="skill-name">APAC Compliance</div><div class="skill-tags"><span class="stag">Multi-Jurisdiction Labour Law</span><span class="stag">Employment Contracts</span><span class="stag">Policy Writing</span><span class="stag">Regulatory Reporting</span><span class="stag">Risk Management</span></div></div>
+      <div class="skill-card reveal d2"><span class="skill-icon">🏗️</span><div class="skill-name">HR Build-Outs</div><div class="skill-tags"><span class="stag">0-to-1 HR Setup</span><span class="stag">Scaling Operations</span><span class="stag">Policy Frameworks</span><span class="stag">Performance Systems</span><span class="stag">Team Structuring</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VALUE PROPS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-label reveal">Why Hire Me</div>
+    <h2 class="section-title reveal">What changes when<br><em>I'm in the room.</em></h2>
+    <p class="section-sub reveal">I've worked in environments where HR had to earn its seat at the table. Here's what that looks like in practice.</p>
+    <div class="value-grid">
+      <div class="value-card reveal"><div class="value-num">01</div><div class="value-title">A business partner, not an HR administrator</div><div class="value-body">I read P&Ls, understand margin pressure, and translate people decisions into financial outcomes. When leadership asks "can we afford this hire?", I come with a model — not just a job description.</div></div>
+      <div class="value-card reveal d1"><div class="value-num">02</div><div class="value-title">Systems that work without me</div><div class="value-body">Every HRIS, policy framework, and process I've designed was built to run at scale — not to create dependency. I hand over documented, automated, self-sustaining operations.</div></div>
+      <div class="value-card reveal"><div class="value-num">03</div><div class="value-title">APAC complexity doesn't slow me down</div><div class="value-body">I've navigated labour law across 8+ countries simultaneously. I know what's different in Singapore vs India — and I've built compliance coverage without needing a lawyer in every office.</div></div>
+      <div class="value-card reveal d1"><div class="value-num">04</div><div class="value-title">I can build and run — not just one or the other</div><div class="value-body">Some HR leaders are great at operating existing systems. Others excel at building. I've done both — built HR from zero, then optimised it for scale. I know what good looks like at every stage of growth.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="wrap">
+    <div class="section-label" style="justify-content:center">Get In Touch</div>
+    <h2 class="section-title reveal">Let's talk about what's<br><em>broken in your people ops.</em></h2>
+    <p class="section-sub reveal">If you're hiring a Head of HR, Director, or HRBP who operates as a true business partner — I'd like to hear about the problem you're trying to solve.</p>
+    <div class="contact-links reveal">
+      <a href="mailto:sundaramarunprasanth48@gmail.com" class="contact-btn primary">
+        ✉&nbsp; Email
+      </a>
+      <a href="https://www.linkedin.com/in/arun-prasanth94/" target="_blank" class="contact-btn secondary">
+        🔗&nbsp; LinkedIn
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Arun Prasanth · HR Leader · APAC</p>
+  <p>Built to show <a href="#cases">impact</a>, not just experience.</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+function toggleCase(card) {
+  const wasOpen = card.classList.contains('open');
+  document.querySelectorAll('.case-card').forEach(c => c.classList.remove('open'));
+  if (!wasOpen) card.classList.add('open');
+}
+</script>
+</body>
+</html>
